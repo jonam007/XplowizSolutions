@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <Code size={30} className="text-blue-400" />
-              <span className="ml-2 font-bold text-xl">TechSolutions</span>
+              <span className="ml-2 font-bold text-xl">XplowizSolutions</span>
             </div>
             <p className="text-gray-400 text-sm">
               Creating innovative digital solutions for businesses and organizations since 2015.
@@ -107,8 +107,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-blue-400 mr-2 shrink-0" />
-                <a href="mailto:info@techsolutions.com" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                  info@techsolutions.com
+                <a href="mailto:info@xplowizsolutions.com" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                  info@xplowizsolutions.com
                 </a>
               </li>
             </ul>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} TechSolutions. All rights reserved.
+            &copy; {new Date().getFullYear()} XplowizSolutions. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6">

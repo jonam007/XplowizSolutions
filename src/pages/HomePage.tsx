@@ -11,75 +11,36 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import HeroCarousel from '../components/home/HeroCarousel';
 
 const HomePage: React.FC = () => {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative pt-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 h-[85vh]" />
-        <div className="relative z-10 container mx-auto px-6 py-24">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="text-center lg:text-left lg:w-1/2 mb-12 lg:mb-0">
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-                Innovative Software<br />
-                <span className="text-blue-300">Solutions</span> for Your Business
-              </h1>
-              <p className="text-xl text-blue-100 mb-10">
-                We create cutting-edge software solutions that transform businesses and inspire growth.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link 
-                  to="/contact" 
-                  className="px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
-                >
-                  Get Started
-                </Link>
-                <Link 
-                  to="/services" 
-                  className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-md font-medium hover:bg-white/10 transition-colors duration-300"
-                >
-                  Our Services
-                </Link>
-              </div>
-            </div>
-            <div className="lg:w-1/2">
-              <div className="relative">
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-                  <img 
-                    src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                    alt="Software Development Team" 
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-blue-500 text-white p-4 rounded-lg shadow-lg">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-blue-100" />
-                    <span className="font-medium">15+ Years Experience</span>
-                  </div>
-                </div>
-                <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-                  <div className="flex items-center space-x-1">
-                    {[1, 2, 3, 4, 5].map((_, index) => (
-                      <Star key={index} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-600 mt-1">500+ Satisfied Clients</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600 mb-12">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-gray-800 mb-4"
+            >
+              Our Services
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-gray-600 mb-12"
+            >
               We offer a comprehensive range of software development services to help businesses succeed in the digital world.
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,8 +61,12 @@ const HomePage: React.FC = () => {
                 description: "Specialized solutions for churches and religious organizations. Our software streamlines administration, member management, and community engagement."
               }
             ].map((service, index) => (
-              <div 
-                key={index} 
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
                 className="bg-white rounded-xl shadow-lg p-8 transition-transform duration-300 hover:-translate-y-2"
               >
                 <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
@@ -115,7 +80,7 @@ const HomePage: React.FC = () => {
                 >
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -125,8 +90,13 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10"
+            >
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose XplowizSolutions</h2>
               <p className="text-lg text-gray-600 mb-8">
                 We combine technical expertise with industry insights to deliver solutions that make a real difference for our clients.
               </p>
@@ -149,7 +119,14 @@ const HomePage: React.FC = () => {
                     description: "Rigorous testing and quality assurance processes ensure our solutions are robust, secure, and reliable."
                   }
                 ].map((feature, index) => (
-                  <div key={index} className="flex">
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 }}
+                    className="flex"
+                  >
                     <div className="flex-shrink-0 mt-1">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                         {feature.icon}
@@ -159,12 +136,17 @@ const HomePage: React.FC = () => {
                       <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
                       <p className="mt-1 text-gray-600">{feature.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
             
-            <div className="lg:w-1/2">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
+            >
               <div className="bg-gray-50 rounded-2xl p-6 relative">
                 <img 
                   src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
@@ -176,7 +158,7 @@ const HomePage: React.FC = () => {
                   <div className="text-blue-100">Projects Completed</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

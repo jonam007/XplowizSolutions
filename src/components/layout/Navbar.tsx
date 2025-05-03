@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,9 +38,12 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
+        isScrolled || !isHomePage
           ? 'bg-white shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
@@ -48,15 +53,15 @@ const Navbar: React.FC = () => {
           <Code 
             size={30} 
             className={`transition-colors duration-300 ${
-              isScrolled ? 'text-blue-600' : 'text-white'
+              isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'
             }`} 
           />
           <span 
             className={`ml-2 font-bold text-xl transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800' : 'text-white'
+              isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'
             }`}
           >
-            TechSolutions
+            XplowizSolutions
           </span>
         </Link>
 
@@ -68,19 +73,24 @@ const Navbar: React.FC = () => {
               to={item.path}
               className={`text-sm font-medium transition-colors duration-300 hover:text-blue-500 ${
                 location.pathname === item.path
-                  ? isScrolled ? 'text-blue-600' : 'text-blue-400'
-                  : isScrolled ? 'text-gray-800' : 'text-white'
+                  ? isScrolled || !isHomePage ? 'text-blue-600' : 'text-blue-400'
+                  : isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'
               }`}
             >
               {item.name}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-300"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Get Started
-          </Link>
+            <Link
+              to="/contact"
+              className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-300"
+            >
+              Get Started
+            </Link>
+          </motion.div>
         </div>
 
         {/* Mobile Navigation Button */}
@@ -90,16 +100,21 @@ const Navbar: React.FC = () => {
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+            <X size={24} className={isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'} />
           ) : (
-            <Menu size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+            <Menu size={24} className={isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'} />
           )}
         </button>
       </nav>
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6 transition-all duration-300 ease-in-out">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6"
+        >
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
@@ -123,9 +138,9 @@ const Navbar: React.FC = () => {
               Get Started
             </Link>
           </div>
-        </div>
+        </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 };
 

@@ -64,7 +64,7 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 <Link 
-                  to="/contact" 
+                  to="/web-development" 
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
                 >
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
@@ -98,7 +98,7 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 <Link 
-                  to="/contact" 
+                  to="/mobile-apps" 
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
                 >
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
@@ -132,7 +132,7 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 <Link 
-                  to="/contact" 
+                  to="/church-software" 
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
                 >
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />

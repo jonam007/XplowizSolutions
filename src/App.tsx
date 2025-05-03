@@ -24,6 +24,10 @@ function App() {
             <Route path="/services/church-software" element={<ChurchSoftwarePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="*" element={<div>404 Not Found</div>} />
+            <Route path="web-development" element={<WebDevelopmentPage />} />
+            <Route path="mobile-apps" element={<MobileAppPage />} />
+            <Route path="church-software" element={<ChurchSoftwarePage />} />
           </Routes>
         </main>
         <Footer />
