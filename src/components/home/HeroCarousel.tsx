@@ -58,7 +58,7 @@ const HeroCarousel: React.FC = () => {
                   alt={slide.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50" />
+                {/* Removed the overlay gradient */}
               </div>
               
               <motion.div
@@ -72,12 +72,12 @@ const HeroCarousel: React.FC = () => {
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                       {slide.title}
                     </h1>
-                    <p className="text-xl text-white mb-8">
+                    <p className="text-xl text-gray-200 mb-8">
                       {slide.subtitle}
                     </p>
                     <Link
                       to="/contact"
-                      className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-md font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
                     >
                       {slide.cta}
                       <ArrowRight className="ml-2 w-5 h-5" />

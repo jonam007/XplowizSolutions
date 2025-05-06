@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ProductsPage: React.FC = () => {
   return (
-    <div className="pt-20 min-h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-violet-900">
+    <div className="pt-20 min-h-screen bg-gradient-page">
       {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
@@ -46,7 +46,7 @@ const ProductsPage: React.FC = () => {
                   Streamline your church operations with our comprehensive management solution. From member tracking to event planning, we've got you covered.
                 </p>
                 <Link
-                  to="/contact"
+                  to="/products/church-management"
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300 group"
                 >
                   Learn More
@@ -72,7 +72,7 @@ const ProductsPage: React.FC = () => {
                   Take control of your business on the go with our powerful mobile management platform. Access real-time data and make informed decisions anywhere.
                 </p>
                 <Link
-                  to="/contact"
+                  to="/products/mobile-management"
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 group"
                 >
                   Learn More

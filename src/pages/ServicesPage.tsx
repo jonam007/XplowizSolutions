@@ -4,7 +4,6 @@ import {
   Globe, 
   MessageSquare, 
   Wrench, 
-  AtSign,
   Server,
   Shield,
   Clock,
@@ -17,41 +16,23 @@ import { motion } from 'framer-motion';
 
 const ServicesPage: React.FC = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-20 min-h-screen bg-gradient-page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold mb-4"
-            >
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
               Reliable Web Solutions for Your Business
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-blue-100 mb-8"
-            >
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Expert Web Hosting, Bulk SMS, Domain Registration & Maintenance Services
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Link 
-                to="#services"
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
-              >
-                Explore Our Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </motion.div>
-          </div>
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -64,14 +45,15 @@ const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="relative group"
             >
-              <div className="p-8">
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <Server className="w-8 h-8 text-blue-600" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                  <Server className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">High-Performance Web Hosting</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">High-Performance Web Hosting</h3>
+                <p className="text-gray-300 mb-6">
                   Reliable and secure hosting solutions designed to keep your website running smoothly 24/7.
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -84,16 +66,16 @@ const ServicesPage: React.FC = () => {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
-                      <span className="ml-3 text-gray-700">{feature}</span>
+                      <span className="ml-3 text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
                   Choose Your Hosting Plan
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -103,14 +85,15 @@ const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="relative group"
             >
-              <div className="p-8">
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <MessageSquare className="w-8 h-8 text-blue-600" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                  <MessageSquare className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Powerful Bulk SMS Solutions</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Powerful Bulk SMS Solutions</h3>
+                <p className="text-gray-300 mb-6">
                   Reach your customers instantly with our reliable bulk SMS service.
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -123,16 +106,16 @@ const ServicesPage: React.FC = () => {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
-                      <span className="ml-3 text-gray-700">{feature}</span>
+                      <span className="ml-3 text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
                   Send SMS Now
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -142,14 +125,15 @@ const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="relative group"
             >
-              <div className="p-8">
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <Wrench className="w-8 h-8 text-blue-600" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                  <Wrench className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Hassle-Free Website Maintenance</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Hassle-Free Website Maintenance</h3>
+                <p className="text-gray-300 mb-6">
                   Keep your website secure, updated, and performing at its best.
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -162,16 +146,16 @@ const ServicesPage: React.FC = () => {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
-                      <span className="ml-3 text-gray-700">{feature}</span>
+                      <span className="ml-3 text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
                   Request Maintenance
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -181,14 +165,15 @@ const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="relative group"
             >
-              <div className="p-8">
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <Globe className="w-8 h-8 text-blue-600" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                  <Globe className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Secure Your Domain Today</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Secure Your Domain Today</h3>
+                <p className="text-gray-300 mb-6">
                   Register and manage your domain names with ease.
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -201,16 +186,16 @@ const ServicesPage: React.FC = () => {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
-                      <span className="ml-3 text-gray-700">{feature}</span>
+                      <span className="ml-3 text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
                 >
                   Register a Domain
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -311,23 +296,31 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Need a Custom Solution? Let's Build It Together!
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Contact our team to discuss your specific requirements and how we can help.
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
-            >
-              Contact Our Team
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative max-w-4xl mx-auto text-center"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-2xl blur-3xl"></div>
+            <div className="relative bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-12">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Need a Custom Solution? Let's Build It Together!
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Contact our team to discuss your specific requirements and how we can help.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300 group"
+              >
+                Contact Our Team
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

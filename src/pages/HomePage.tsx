@@ -16,19 +16,19 @@ import HeroCarousel from '../components/home/HeroCarousel';
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <div className="pt-20 min-h-screen bg-gradient-page">
       {/* Hero Carousel */}
       <HeroCarousel />
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-gray-800 mb-4"
+              className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4"
             >
               Our Services
             </motion.h2>
@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gray-600 mb-12"
+              className="text-lg text-gray-300 mb-12"
             >
               We offer a comprehensive range of software development services to help businesses succeed in the digital world.
             </motion.p>
@@ -87,7 +87,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center">
             <motion.div 
@@ -96,25 +96,27 @@ const HomePage: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10"
             >
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose XplowizSolutions</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
+                Why Choose XplowizSolutions
+              </h2>
+              <p className="text-lg text-gray-300 mb-8">
                 We combine technical expertise with industry insights to deliver solutions that make a real difference for our clients.
               </p>
               
               <div className="space-y-6">
                 {[
                   {
-                    icon: <Users className="w-6 h-6 text-blue-600" />,
+                    icon: <Users className="w-6 h-6 text-blue-400" />,
                     title: "Expert Team",
                     description: "Our team of skilled developers, designers, and strategists bring years of experience across diverse industries."
                   },
                   {
-                    icon: <Clock className="w-6 h-6 text-blue-600" />,
+                    icon: <Clock className="w-6 h-6 text-blue-400" />,
                     title: "Timely Delivery",
                     description: "We understand the importance of deadlines and deliver high-quality solutions on time, every time."
                   },
                   {
-                    icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+                    icon: <ShieldCheck className="w-6 h-6 text-blue-400" />,
                     title: "Quality Assurance",
                     description: "Rigorous testing and quality assurance processes ensure our solutions are robust, secure, and reliable."
                   }
@@ -128,13 +130,13 @@ const HomePage: React.FC = () => {
                     className="flex"
                   >
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
                         {feature.icon}
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
-                      <p className="mt-1 text-gray-600">{feature.description}</p>
+                      <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+                      <p className="mt-1 text-gray-300">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -147,15 +149,15 @@ const HomePage: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2"
             >
-              <div className="bg-gray-50 rounded-2xl p-6 relative">
+              <div className="bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 relative">
                 <img 
                   src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Team Collaboration" 
                   className="w-full h-auto rounded-xl"
                 />
-                <div className="absolute bottom-10 left-0 transform -translate-x-1/3 bg-blue-600 text-white py-6 px-8 rounded-lg shadow-xl">
+                <div className="absolute bottom-10 left-0 transform -translate-x-1/3 bg-gradient-to-r from-purple-500 to-pink-600 text-white py-6 px-8 rounded-lg shadow-xl">
                   <div className="text-4xl font-bold">300+</div>
-                  <div className="text-blue-100">Projects Completed</div>
+                  <div className="text-purple-100">Projects Completed</div>
                 </div>
               </div>
             </motion.div>
@@ -164,11 +166,13 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
-            <p className="text-lg text-gray-600 mb-12">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-gray-300 mb-12">
               Don't just take our word for it. Here's what our clients have to say about working with us.
             </p>
           </div>
@@ -222,23 +226,25 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-700">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Digital Presence?</h2>
-            <p className="text-xl text-blue-100 mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
+              Ready to Transform Your Digital Presence?
+            </h2>
+            <p className="text-xl text-gray-300 mb-10">
               Let's discuss how our custom software solutions can help your business thrive in the digital landscape.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link 
                 to="/contact" 
-                className="px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-md font-medium hover:from-purple-600 hover:to-pink-700 transition-all duration-300"
               >
                 Contact Us Today
               </Link>
               <Link 
                 to="/services" 
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-md font-medium hover:bg-white/10 transition-colors duration-300"
+                className="px-8 py-4 bg-transparent border-2 border-purple-500 text-white rounded-md font-medium hover:bg-purple-500/10 transition-all duration-300"
               >
                 Explore Our Services
               </Link>

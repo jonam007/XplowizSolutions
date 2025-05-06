@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gradient-page {
+  @apply bg-gradient-to-b from-gray-900 via-purple-900 to-violet-900;
+}

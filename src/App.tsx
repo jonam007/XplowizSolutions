@@ -30,6 +30,8 @@ function App() {
             <Route path="/services/domain-registration" element={<DomainRegistrationPage />} />
             <Route path="/church-software" element={<ChurchSoftwarePage />} />
             <Route path="/mobile-app" element={<MobileAppPage />} />
+            <Route path="/products/church-management" element={<ChurchSoftwarePage />} />
+            <Route path="/products/mobile-management" element={<MobileAppPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>

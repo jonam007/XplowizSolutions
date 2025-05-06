@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md py-3' 
+          ? 'bg-gradient-to-r from-purple-500 to-pink-600 shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -53,12 +53,12 @@ const Navbar: React.FC = () => {
           <Code 
             size={30} 
             className={`transition-colors duration-300 ${
-              isScrolled ? 'text-blue-600' : 'text-white'
+              isScrolled ? 'text-white' : 'text-white'
             }`} 
           />
           <span 
             className={`ml-2 font-bold text-xl transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800' : 'text-white'
+              isScrolled ? 'text-white' : 'text-white'
             }`}
           >
             XplowizSolutions
@@ -71,10 +71,10 @@ const Navbar: React.FC = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`text-sm font-medium transition-colors duration-300 hover:text-blue-500 ${
+              className={`text-sm font-medium transition-colors duration-300 hover:text-pink-300 ${
                 location.pathname === item.path
-                  ? isScrolled ? 'text-blue-600' : 'text-blue-400'
-                  : isScrolled ? 'text-gray-800' : 'text-white'
+                  ? 'text-white'
+                  : 'text-white'
               }`}
             >
               {item.name}
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
           >
             <Link
               to="/contact"
-              className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-300"
+              className="bg-white text-purple-600 px-5 py-2 rounded-md text-sm font-medium hover:bg-purple-100 transition-colors duration-300"
             >
               Get Started
             </Link>
@@ -95,14 +95,14 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Button */}
         <button
-          className="md:hidden text-gray-600"
+          className="md:hidden text-white"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+            <X size={24} className="text-white" />
           ) : (
-            <Menu size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
+            <Menu size={24} className="text-white" />
           )}
         </button>
       </nav>
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6"
+          className="md:hidden absolute top-full left-0 right-0 bg-gradient-to-r from-purple-500 to-pink-600 shadow-md py-4 px-6"
         >
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
@@ -122,8 +122,8 @@ const Navbar: React.FC = () => {
                 to={item.path}
                 className={`text-sm font-medium ${
                   location.pathname === item.path
-                    ? 'text-blue-600'
-                    : 'text-gray-800'
+                    ? 'text-white'
+                    : 'text-white'
                 }`}
                 onClick={closeMenu}
               >
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-300 text-center"
+              className="bg-white text-purple-600 px-5 py-2 rounded-md text-sm font-medium hover:bg-purple-100 transition-colors duration-300 text-center"
               onClick={closeMenu}
             >
               Get Started

@@ -93,6 +93,38 @@ const MobileAppPage: React.FC = () => {
         </div>
       </section>
 
+      {/* App Screenshot Gallery */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-4">
+              Explore Our App Screenshots
+            </h2>
+            <p className="text-lg text-gray-300">
+              Take a closer look at the features and design of our mobile app.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              "https://via.placeholder.com/400x300?text=Dashboard",
+              "https://via.placeholder.com/400x300?text=Member+Management",
+              "https://via.placeholder.com/400x300?text=Event+Scheduling",
+              "https://via.placeholder.com/400x300?text=Push+Notifications",
+              "https://via.placeholder.com/400x300?text=Analytics",
+              "https://via.placeholder.com/400x300?text=Mobile+View"
+            ].map((image, index) => (
+              <div key={index} className="relative group">
+                <img
+                  src={image}
+                  alt={`Screenshot ${index + 1}`}
+                  className="w-full h-auto rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section className="py-16">
         <div className="container mx-auto px-6">
