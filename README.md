@@ -12,7 +12,7 @@ Official website for Xplowiz Solutions built with React + TypeScript + Vite
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/XplowizSolutions.git
+git clone https://github.com/jonam007/XplowizSolutions.git
 cd XplowizSolutions
 ```
 

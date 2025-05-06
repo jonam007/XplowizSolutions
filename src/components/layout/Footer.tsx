@@ -97,18 +97,18 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={20} className="text-blue-400 mr-2 mt-1 shrink-0" />
-                <span className="text-gray-400">123 Tech Avenue, San Francisco, CA 94107</span>
+                <span className="text-gray-400">No. 128/32, Dharmaraj Layout, Sowripalayam Road,   <br/>Ramanathapuram,<br/>Coimbatore - 641045.             </span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-blue-400 mr-2 shrink-0" />
                 <a href="tel:+11234567890" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                  +1 (123) 456-7890
+                +91 98940 24682
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-blue-400 mr-2 shrink-0" />
-                <a href="mailto:info@xplowizsolutions.com" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                  info@xplowizsolutions.com
+                <a href="mailto:contact@xplowiz.com" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                  contact@xplowiz.com
                 </a>
               </li>
             </ul>
