@@ -1,8 +1,0 @@
-<!-- typescript.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <title>TypeScript Logo</title>
-  <path fill="#3178c6" d="M0 0h512v512H0z"/>
-  <path fill="#fff" d="M149.7 342.7h116.2v30.8H149.7zm58.1-198.1h174.6v30.8H207.8z"/>
-  <path fill="#fff" d="M207.8 301.1h117.6v30.8H207.8zM207.8 219.6h58.8v30.8h-58.8z"/>
-  <path fill="#fff" d="M383.1 138.1l-116.2 116.3-26.1-26.1-21.8 21.8 47.9 47.9 138-138z"/>
-</svg>

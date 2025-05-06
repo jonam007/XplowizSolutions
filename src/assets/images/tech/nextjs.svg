@@ -1,5 +1,0 @@
-<!-- nextjs.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
- <title>Next.js Logo</title>
- <path fill-rule="evenodd" clip-rule="evenodd" d="M64 0C28.653 0 0 28.653 0 64s28.653 64 64 64 64-28.653 64-64S99.347 0 64 0zm25.37 101.544l-41.18-47.096v46.2H40V26.352h8.19l41.18 47.096V27.25h8.19v74.294h-8.19z" fill="#000"/>
-</svg>

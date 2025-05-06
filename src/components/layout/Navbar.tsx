@@ -7,7 +7,6 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +32,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
+    { name: 'Products', path: '/products' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage
+        isScrolled 
           ? 'bg-white shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
@@ -53,12 +53,12 @@ const Navbar: React.FC = () => {
           <Code 
             size={30} 
             className={`transition-colors duration-300 ${
-              isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'
+              isScrolled ? 'text-blue-600' : 'text-white'
             }`} 
           />
           <span 
             className={`ml-2 font-bold text-xl transition-colors duration-300 ${
-              isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'
+              isScrolled ? 'text-gray-800' : 'text-white'
             }`}
           >
             XplowizSolutions
@@ -73,8 +73,8 @@ const Navbar: React.FC = () => {
               to={item.path}
               className={`text-sm font-medium transition-colors duration-300 hover:text-blue-500 ${
                 location.pathname === item.path
-                  ? isScrolled || !isHomePage ? 'text-blue-600' : 'text-blue-400'
-                  : isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'
+                  ? isScrolled ? 'text-blue-600' : 'text-blue-400'
+                  : isScrolled ? 'text-gray-800' : 'text-white'
               }`}
             >
               {item.name}
@@ -100,9 +100,9 @@ const Navbar: React.FC = () => {
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X size={24} className={isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'} />
+            <X size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
           ) : (
-            <Menu size={24} className={isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'} />
+            <Menu size={24} className={isScrolled ? 'text-gray-800' : 'text-white'} />
           )}
         </button>
       </nav>

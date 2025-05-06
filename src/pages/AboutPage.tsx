@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Award,
-  TrendingUp,
-  Users,
-  Target,
+import { 
+  Award, 
+  TrendingUp, 
+  Users, 
+  Target, 
   Check
 } from 'lucide-react';
 
@@ -30,25 +30,19 @@ const AboutPage: React.FC = () => {
             <div className="md:w-1/2 md:pr-12 mb-8 md:mb-0">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                XPLOWIZ SOLUTIONS has proven expertise in providing quality IT development services. The dawn of the internet as a media has literally made the world a smaller place and phenomenally changed the way business is done, globally. Extraordinary speed of communication is the name of the game in today’s fast paced global economy. This being the scenario, we at X-PLOWIZ SOLUTIONS offer various IT solutions and Web based solutions, for varied businesses.
-
-                Based at Coimbatore, popularly referred to as ‘The Manchester of South India’, we truly symbolize the dynamic and entrepreneurial spirit of this famed city. We are a customer-focused and quality conscious software development company, offering a wide array of services, right from the project conceptualization and business analysis stage to the actual implementation and continual support stage.
-
-               
-
-             
+                Founded in 2015, TechSolutions began with a simple mission: to help businesses thrive through innovative technology solutions. What started as a small team of three developers has grown into a full-service software development company with a diverse team of experts.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-              Our asset is our world-class facility manned by some of the finest brains in the industry. We are firm believers in investing in latest cutting edge technology and periodical training for further enhancement of our intellectual property. We understand every client’s varied needs and hence, work in close tandem with them to come out with solutions, that are always completed ‘on time’ and importantly ‘within budget’.
+                Over the years, we've had the privilege of working with companies across various industries, from small startups to established enterprises, helping them transform their ideas into powerful digital solutions.
               </p>
               <p className="text-lg text-gray-600">
-              Our constant penchant for innovation has seen us come out with incredible ideas, making us ideally suited for different needs of a varied range of business. Our commitment to quality has seen us grow by leaps and bounds, to make us the most preferred choice of an increasing number of clientele. This is perhaps, our biggest testimonial.
+                Today, we continue to push the boundaries of what's possible with technology, staying at the forefront of industry trends and best practices to deliver cutting-edge solutions that drive real business results.
               </p>
             </div>
             <div className="md:w-1/2">
-              <img
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Our Team"
+              <img 
+                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Our Team" 
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -156,13 +150,13 @@ const AboutPage: React.FC = () => {
                 bio: "Sarah works closely with our clients to understand their needs and ensure our solutions deliver measurable business results."
               }
             ].map((member, index) => (
-              <div
-                key={index}
+              <div 
+                key={index} 
                 className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
@@ -203,8 +197,8 @@ const AboutPage: React.FC = () => {
             <p className="text-lg text-gray-600 mb-8">
               Let's discuss how we can help bring your vision to life with our expertise in software development.
             </p>
-            <Link
-              to="/contact"
+            <Link 
+              to="/contact" 
               className="px-8 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-300"
             >
               Get in Touch

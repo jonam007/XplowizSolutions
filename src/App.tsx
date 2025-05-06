@@ -4,11 +4,15 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
+import ProductsPage from './pages/ProductsPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
-import WebDevelopmentPage from './pages/services/WebDevelopmentPage';
-import MobileAppPage from './pages/services/MobileAppPage';
-import ChurchSoftwarePage from './pages/services/ChurchSoftwarePage';
+import WebHostingPage from './pages/services/WebHostingPage';
+import BulkSMSPage from './pages/services/BulkSMSPage';
+import WebMaintenancePage from './pages/services/WebMaintenancePage';
+import DomainRegistrationPage from './pages/services/DomainRegistrationPage';
+import ChurchSoftwarePage from './pages/ChurchSoftwarePage';
+import MobileAppPage from './pages/MobileAppPage';
 
 function App() {
   return (
@@ -19,15 +23,15 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/web-development" element={<WebDevelopmentPage />} />
-            <Route path="/services/mobile-apps" element={<MobileAppPage />} />
-            <Route path="/services/church-software" element={<ChurchSoftwarePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/services/web-hosting" element={<WebHostingPage />} />
+            <Route path="/services/bulk-sms" element={<BulkSMSPage />} />
+            <Route path="/services/web-maintenance" element={<WebMaintenancePage />} />
+            <Route path="/services/domain-registration" element={<DomainRegistrationPage />} />
+            <Route path="/church-software" element={<ChurchSoftwarePage />} />
+            <Route path="/mobile-app" element={<MobileAppPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<div>404 Not Found</div>} />
-            <Route path="web-development" element={<WebDevelopmentPage />} />
-            <Route path="mobile-apps" element={<MobileAppPage />} />
-            <Route path="church-software" element={<ChurchSoftwarePage />} />
           </Routes>
         </main>
         <Footer />

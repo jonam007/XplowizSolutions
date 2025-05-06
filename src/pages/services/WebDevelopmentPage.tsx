@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   Code, 
   Rocket, 
@@ -11,263 +10,30 @@ import {
   CheckCircle2,
   ArrowRight,
   Timer,
-  Award,
-  Globe,
-  Users,
-  Settings,
-  Shield
+  Award
 } from 'lucide-react';
 
 const WebDevelopmentPage: React.FC = () => {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
     <div className="pt-20">
-      {/* Enhanced Hero Section with Animation */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-32 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url("/images/pattern.svg")',
-            opacity: 0.1
-          }}
-        />
-        <div className="container mx-auto px-6 relative">
-          <motion.div 
-            className="max-w-3xl mx-auto text-center"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Transform Your Digital Presence
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Custom Websites That Drive Growth
             </h1>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Create stunning, high-performance websites that engage your audience
-              and drive business growth.
+            <p className="text-xl text-blue-100 mb-8">
+              Beautiful, fast, and scalable websites tailored to your business needs.
+              We create digital experiences that convert visitors into customers.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
             >
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
-              >
-                Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* New Statistics Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {[
-              { number: "100+", label: "Projects Completed" },
-              { number: "95%", label: "Client Satisfaction" },
-              { number: "24/7", label: "Support Available" },
-              { number: "5+", label: "Years Experience" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                className="text-center p-6 rounded-lg bg-gray-50"
-              >
-                <h3 className="text-4xl font-bold text-blue-600 mb-2">
-                  {stat.number}
-                </h3>
-                <p className="text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* New Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Our Development Process
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We follow a structured approach to deliver high-quality web solutions
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                icon: <Users className="w-8 h-8 text-blue-600" />,
-                title: "Discovery",
-                description: "Understanding your goals and requirements"
-              },
-              {
-                icon: <Layout className="w-8 h-8 text-blue-600" />,
-                title: "Design",
-                description: "Creating the perfect user experience"
-              },
-              {
-                icon: <Code className="w-8 h-8 text-blue-600" />,
-                title: "Development",
-                description: "Building with clean, efficient code"
-              },
-              {
-                icon: <Rocket className="w-8 h-8 text-blue-600" />,
-                title: "Launch",
-                description: "Deploying and optimizing performance"
-              }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                className="relative p-6 bg-white rounded-xl shadow-lg"
-              >
-                <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-6">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600">{step.description}</p>
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-blue-300" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Enhanced Portfolio Section */}
-      <motion.section 
-        className="py-20 bg-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-            Our Recent Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "E-commerce Platform",
-                description: "Custom shopping experience with advanced filtering and secure checkout."
-              },
-              {
-                image: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "Corporate Website",
-                description: "Modern design with interactive elements and optimized performance."
-              },
-              {
-                image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "News Portal",
-                description: "Content-rich platform with advanced search and categorization."
-              }
-            ].map((project, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <Link
-                    to="/contact"
-                    className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
-                  >
-                    View Case Study
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* New Technologies Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Technologies We Use
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We work with the latest technologies to build modern web applications
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-            {[
-              "src/assets/images/tech/react.svg",
-              "src/assets/images/tech/nodejs.jpg",
-              "src/assets/images/tech/typescript.jpg",
-              "src/assets/images/tech/nextjs.jpg",
-              "src/assets/images/tech/tailwind.jpg",
-              "src/assets/images/tech/mongodb.jpg",
-               "src/assets/images/tech/php.jpg", 
-               "src/assets/images/tech/laravel.jpg"
-            ].map((tech, index) => (
-              <motion.div
-                key={index}
-                className="p-6 bg-white rounded-lg shadow-sm"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <img src={tech} alt="Technology" className="w-full h-12 object-contain" />
-              </motion.div>
-            ))}
+              Get Your Free Consultation
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -349,6 +115,52 @@ const WebDevelopmentPage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Showcase */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
+            Our Recent Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                title: "E-commerce Platform",
+                description: "Custom shopping experience with advanced filtering and secure checkout."
+              },
+              {
+                image: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                title: "Corporate Website",
+                description: "Modern design with interactive elements and optimized performance."
+              },
+              {
+                image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                title: "News Portal",
+                description: "Content-rich platform with advanced search and categorization."
+              }
+            ].map((project, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <Link
+                    to="/contact"
+                    className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                  >
+                    View Case Study
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
