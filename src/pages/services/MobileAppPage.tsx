@@ -225,7 +225,7 @@ const MobileAppPage: React.FC = () => {
                 key={index}
                 className="bg-white rounded-xl shadow-lg p-8 text-center transition-transform duration-300 hover:-translate-y-2"
               >
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
@@ -237,7 +237,7 @@ const MobileAppPage: React.FC = () => {
       </motion.section>
 
       {/* Testimonials Section */}
-      <motion.section 
+      {/* <motion.section 
         className="py-16 bg-gray-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -290,10 +290,10 @@ const MobileAppPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Case Studies */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
             Success Stories
@@ -336,7 +336,7 @@ const MobileAppPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">

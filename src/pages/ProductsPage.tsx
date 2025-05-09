@@ -32,9 +32,9 @@ const ProductsPage: React.FC = () => {
             </p>
             
             {/* Statistics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
               {[
-                { number: "30+", label: "Clients Tamilnadu" },
+           
                 { number: "98%", label: "Customer Satisfaction" },
                 { number: "24/7", label: "Support Available" },
                 { number: "20+", label: "Clients Served" }
@@ -69,7 +69,7 @@ const ProductsPage: React.FC = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  Best Seller
+                  Hybrid
                 </div>
               </div>
               <div className="p-8">
@@ -112,7 +112,7 @@ const ProductsPage: React.FC = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  Featured
+                  Cloud
                 </div>
               </div>
               <div className="p-8">
