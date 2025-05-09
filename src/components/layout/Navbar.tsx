@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
+    { name: 'Products', path: '/products' }, // Added Products section
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -49,19 +50,20 @@ const Navbar: React.FC = () => {
       }`}
     >
       <nav className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
-          <Code 
-            size={30} 
-            className={`transition-colors duration-300 ${
-              isScrolled || !isHomePage ? 'text-blue-600' : 'text-white'
-            }`} 
-          />
+        <Link to="/" className="flex items-center space-x-2">
+          <div className="flex items-center justify-center">
+            <img 
+              src="src/assets/images/Xplowiz_Logo.png" 
+              alt="XplowizSolutions Logo" 
+              className="h-16 w-36 transform transition-transform duration-300 hover:scale-110"
+            />
+          </div>
           <span 
-            className={`ml-2 font-bold text-xl transition-colors duration-300 ${
+            className={`font-bold text-xl transition-colors duration-300 ${
               isScrolled || !isHomePage ? 'text-gray-800' : 'text-white'
             }`}
           >
-            XplowizSolutions
+          
           </span>
         </Link>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   Smartphone,
   Code,
@@ -10,10 +11,28 @@ import {
   ArrowRight,
   CheckCircle2,
   Award,
-  Timer
+  Timer,
+  Bell,
+  Handshake,
+  Gift,
+  Calendar,
+  Camera,
+  Church,
+  MessageSquare,
+  Send,
+  Star,
+  Apple,
+  Play
 } from 'lucide-react';
 
 const MobileAppPage: React.FC = () => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -34,6 +53,28 @@ const MobileAppPage: React.FC = () => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
+        </div>
+        
+        {/* App Store Buttons */}
+        <div className="flex justify-center gap-4 mt-8">
+          <a 
+            href="#" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors"
+          >
+            <Apple className="w-6 h-6 mr-2" />
+            App Store
+          </a>
+          <a 
+            href="https://play.google.com/store/apps/dev?id=5159551313006168035&hl=en_US" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors"
+          >
+            <Play className="w-6 h-6 mr-2" />
+            Play Store
+          </a>
         </div>
       </section>
 
@@ -97,12 +138,9 @@ const MobileAppPage: React.FC = () => {
               We use the latest technologies to build robust and scalable mobile applications.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: "Flutter",
-                description: "Cross-platform development for iOS and Android"
-              },
+            
               {
                 title: "React Native",
                 description: "Native performance with JavaScript"
@@ -128,6 +166,132 @@ const MobileAppPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Church App Features */}
+      <motion.section
+        className="py-16 bg-white"
+        variants={fadeIn}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
+            Advanced Church App Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Bell className="w-8 h-8 text-blue-600" />,
+                title: "Push Notifications",
+                description: "Real-time alerts for prayer requests, mass schedules, and important announcements."
+              },
+              {
+                icon: <Handshake className="w-8 h-8 text-blue-600" />,
+                title: "Prayer Requests",
+                description: "Digital prayer request submission and tracking with notification updates."
+              },
+              {
+                icon: <Gift className="w-8 h-8 text-blue-600" />,
+                title: "Mass Offerings",
+                description: "Secure online mass booking and donation management system."
+              },
+              {
+                icon: <Calendar className="w-8 h-8 text-blue-600" />,
+                title: "Events Management",
+                description: "Comprehensive calendar for masses, events, and parish activities."
+              },
+              {
+                icon: <Camera className="w-8 h-8 text-blue-600" />,
+                title: "360° Virtual Tours",
+                description: "Immersive church tours with interactive information points."
+              },
+              {
+                icon: <Church className="w-8 h-8 text-blue-600" />,
+                title: "Live Streaming",
+                description: "HD live streaming integration for masses and special events."
+              },
+              {
+                icon: <MessageSquare className="w-8 h-8 text-blue-600" />,
+                title: "Community Portal",
+                description: "Interactive member portal for enhanced parish engagement."
+              },
+              {
+                icon: <Send className="w-8 h-8 text-blue-600" />,
+                title: "Announcements",
+                description: "Multi-channel announcement system with instant notifications."
+              }
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg p-8 text-center transition-transform duration-300 hover:-translate-y-2"
+              >
+                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Testimonials Section */}
+      <motion.section 
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
+            What Our Users Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "The prayer request feature has truly transformed our community engagement.",
+                author: "Fr. Michael",
+                role: "Parish Priest, St. Mary's Church",
+                rating: 5
+              },
+              {
+                quote: "Live streaming and virtual tours have helped us reach more people than ever.",
+                author: "Sarah Thompson",
+                role: "Communications Director, Diocese",
+                rating: 5
+              },
+              {
+                quote: "The mass booking system is seamless and user-friendly.",
+                author: "John Davis",
+                role: "Church Administrator",
+                rating: 5
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={fadeIn}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="bg-white rounded-xl shadow-lg p-8"
+              >
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-bold text-gray-800">{testimonial.author}</p>
+                  <p className="text-gray-600">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* Case Studies */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
@@ -137,22 +301,22 @@ const MobileAppPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                image: "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "Social Network App",
-                stats: "40% increase in user retention",
-                description: "A social networking app that connects like-minded individuals."
+                image: "https://images.pexels.com/photos/208371/pexels-photo-208371.jpeg",
+                title: "St. Mary's Parish App",
+                stats: "85% member engagement",
+                description: "Comprehensive parish app with virtual tours and live streaming features."
               },
               {
-                image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "Fitness Tracking App",
-                stats: "100,000+ active users",
-                description: "Comprehensive fitness tracking with social features."
+                image: "https://images.pexels.com/photos/161060/church-altar-clouds-light-161060.jpeg",
+                title: "Diocese Connect",
+                stats: "50,000+ active users",
+                description: "Multi-parish platform with integrated mass booking and prayer requests."
               },
               {
-                image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                title: "Business Management App",
-                stats: "85% task efficiency improvement",
-                description: "Streamlined business operations and team management."
+                image: "https://images.pexels.com/photos/67075/pexels-photo-67075.jpeg",
+                title: "Catholic Community App",
+                stats: "200% donation increase",
+                description: "Feature-rich app with event management and secure donations."
               }
             ].map((case_study, index) => (
               <div key={index} className="bg-gray-50 rounded-xl overflow-hidden">

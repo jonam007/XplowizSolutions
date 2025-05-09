@@ -11,6 +11,12 @@ import 'swiper/css/effect-fade';
 
 const slides = [
   {
+    title: "Welcome to XplowizSolutions",
+    subtitle: "Creating Innovative Digital Solutions for a Better Tomorrow",
+    image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    cta: "Explore More"
+  },
+  {
     title: "Transform Your Digital Presence",
     subtitle: "Custom software solutions that drive innovation and growth",
     image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",

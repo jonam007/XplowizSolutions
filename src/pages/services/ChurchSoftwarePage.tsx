@@ -10,21 +10,34 @@ import {
   CheckCircle2,
   ArrowRight,
   Clock,
-  Shield
+  Shield,
+  Users2,
+  FileImage,
+  BookOpen,
+  Archive,
+  Award,
+  Map,
+  FileText,
+  Mail,
+  Gift,
+  Wallet,
+  Bell,
+  FileSpreadsheet
 } from 'lucide-react';
 
 const ChurchSoftwarePage: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Streamline Your Church Operations
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              EaziParish Management System
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Custom church management software that helps you focus on what matters most - your ministry and community.
+              A trusted system to manage your parish community, track participation, and streamline operations. 
+              Experience the power of comprehensive church management software.
             </p>
             <Link
               to="/contact"
@@ -37,56 +50,163 @@ const ChurchSoftwarePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Key Features */}
+      {/* Feature Categories */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-            Comprehensive Church Management Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Users className="w-8 h-8 text-blue-600" />,
-                title: "Member Management",
-                description: "Keep detailed records of your congregation, including contact information, family relationships, and ministry involvement."
-              },
-              {
-                icon: <DollarSign className="w-8 h-8 text-blue-600" />,
-                title: "Online Donations & Tithing",
-                description: "Secure payment processing for donations, recurring giving, and detailed financial reporting."
-              },
-              {
-                icon: <Calendar className="w-8 h-8 text-blue-600" />,
-                title: "Event Scheduling",
-                description: "Manage church events, room bookings, and volunteer scheduling with ease."
-              },
-              {
-                icon: <BarChart className="w-8 h-8 text-blue-600" />,
-                title: "Reporting & Analytics",
-                description: "Gain insights into attendance trends, giving patterns, and ministry effectiveness."
-              },
-              {
-                icon: <MessageSquare className="w-8 h-8 text-blue-600" />,
-                title: "Communication Tools",
-                description: "Send targeted emails, SMS messages, and push notifications to your congregation."
-              },
-              {
-                icon: <Heart className="w-8 h-8 text-blue-600" />,
-                title: "Ministry Management",
-                description: "Track small groups, manage volunteers, and coordinate ministry activities."
-              }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  {feature.icon}
+          {/* Membership Management */}
+          <div className="mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Membership Management</h2>
+              <p className="text-lg text-gray-600">
+                Families and individuals are the heart and soul of your organization. Our comprehensive 
+                system helps you manage all aspects of your parish community.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Users2 className="w-8 h-8 text-blue-600" />,
+                  title: "Family Profile Tracking",
+                  description: "Maintain detailed family records with relationships and history"
+                },
+                {
+                  icon: <FileImage className="w-8 h-8 text-blue-600" />,
+                  title: "Photo Management",
+                  description: "Create and manage family & individual photos"
+                },
+                {
+                  icon: <BookOpen className="w-8 h-8 text-blue-600" />,
+                  title: "Sacrament Register",
+                  description: "Track Baptism, Holy Communion, Confirmation, Marriage and more"
+                },
+                {
+                  icon: <Gift className="w-8 h-8 text-blue-600" />,
+                  title: "Talent Management",
+                  description: "Track and utilize member talents effectively"
+                },
+                {
+                  icon: <Map className="w-8 h-8 text-blue-600" />,
+                  title: "Area-wise Management",
+                  description: "BCC-wise and street-wise data organization"
+                },
+                {
+                  icon: <FileText className="w-8 h-8 text-blue-600" />,
+                  title: "Certificate Management",
+                  description: "Issue official certificates for various sacraments"
+                }
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Contribution Management */}
+          <div className="mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Contribution Management</h2>
+              <p className="text-lg text-gray-600">
+                Track and organize your contribution details with our comprehensive financial management tools.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Wallet className="w-8 h-8 text-blue-600" />,
+                  title: "Subscription Management",
+                  description: "Family and member-wise subscription tracking with multiple plans"
+                }
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Communication Management */}
+          <div className="mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Communication Management</h2>
+              <p className="text-lg text-gray-600">
+                Share relevant information efficiently with your parish community.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <MessageSquare className="w-8 h-8 text-blue-600" />,
+                  title: "Bulk SMS Solution",
+                  description: "Send instant messages from PC to multiple mobiles"
+                },
+                {
+                  icon: <Bell className="w-8 h-8 text-blue-600" />,
+                  title: "Event Notifications",
+                  description: "Communicate special events, festivals, and meetings"
+                },
+                {
+                  icon: <Mail className="w-8 h-8 text-blue-600" />,
+                  title: "Email Management",
+                  description: "Organize and manage group-wise email communications"
+                }
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Reports Section */}
+          <div className="mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Comprehensive Reports</h2>
+              <p className="text-lg text-gray-600">
+                Generate detailed reports with our flexible reporting module.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <FileSpreadsheet className="w-8 h-8 text-blue-600" />,
+                  title: "Dynamic Reports",
+                  description: "Create custom reports with flexible parameters and export to Excel"
+                }
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

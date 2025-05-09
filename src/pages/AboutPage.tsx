@@ -120,7 +120,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Leadership Team</h2>
@@ -174,7 +174,7 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section */}
       <section className="py-16 bg-blue-700 text-white">
@@ -182,8 +182,8 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "10+", label: "Years Experience" },
-              { number: "300+", label: "Projects Completed" },
-              { number: "50+", label: "Team Members" },
+              { number: "30+", label: "Projects Completed" },
+              { number: "20+", label: "Team Members" },
               { number: "100%", label: "Client Satisfaction" }
             ].map((stat, index) => (
               <div key={index}>

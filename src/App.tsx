@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import WebDevelopmentPage from './pages/services/WebDevelopmentPage';
 import MobileAppPage from './pages/services/MobileAppPage';
 import ChurchSoftwarePage from './pages/services/ChurchSoftwarePage';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/services/church-software" element={<ChurchSoftwarePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/products" element={<ProductsPage />} />
             <Route path="*" element={<div>404 Not Found</div>} />
             <Route path="web-development" element={<WebDevelopmentPage />} />
             <Route path="mobile-apps" element={<MobileAppPage />} />
