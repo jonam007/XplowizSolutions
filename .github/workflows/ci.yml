@@ -1,6 +1,6 @@
-name:CI
+name: CI
 
-on: 
+on:
   push:
     branches:
       - main
@@ -13,15 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Updated to latest version
         
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4  # Updated to latest version
         with:
           node-version: '22.14.0'
+          cache: 'npm'  # Added caching for faster installs
+          
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # Changed to 'ci' for more reliable installs
+        
       - name: Run tests
         run: npm test
+        
       - name: Build
         run: npm run build
