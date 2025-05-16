@@ -154,7 +154,7 @@ const HomePage: React.FC = () => {
                   className="w-full h-auto rounded-xl"
                 />
                 <div className="absolute bottom-10 left-0 transform -translate-x-1/3 bg-blue-600 text-white py-6 px-8 rounded-lg shadow-xl">
-                  <div className="text-4xl font-bold">300+</div>
+                  <div className="text-4xl font-bold">30+</div>
                   <div className="text-blue-100">Projects Completed</div>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
@@ -219,7 +219,7 @@ const HomePage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-blue-700">

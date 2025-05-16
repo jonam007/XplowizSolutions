@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Code, 
   Facebook, 
   Twitter, 
   Instagram, 
@@ -18,8 +17,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center">
-              <Code size={30} className="text-blue-400" />
-              <span className="ml-2 font-bold text-xl">XplowizSolutions</span>
+              <img 
+                src="src/assets/images/Xplowiz_Logo.webp" 
+                alt="XplowizSolutions Logo" 
+                className="h-16 w-32 rounded-lg border-0  p-1" 
+              />
+              
             </div>
             <p className="text-gray-400 text-sm">
               Creating innovative digital solutions for businesses and organizations since 2015.

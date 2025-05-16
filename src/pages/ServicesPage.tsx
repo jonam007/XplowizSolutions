@@ -9,7 +9,8 @@ import {
   Server,
   Users,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  PhoneCall
 } from 'lucide-react';
 
 const ServicesPage: React.FC = () => {
@@ -37,8 +38,8 @@ const ServicesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Website Development */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Website Development and Deployment */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
               <div className="bg-blue-600 h-2"></div>
               <div className="p-8">
@@ -47,15 +48,15 @@ const ServicesPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Website Development</h3>
                 <p className="text-gray-600 mb-6">
-                  We design and develop custom websites that are visually stunning, user-friendly, and optimized for performance and conversions.
+                  Professional website development with modern technologies and seamless deployment solutions.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Responsive web design",
-                    "E-commerce websites",
-                    "CMS implementation",
-                    "Web application development",
-                    "Website maintenance and support"
+                    "Custom website development",
+                    "Modern, responsive design",
+                    "Fast deployment process",
+                    "Performance optimization",
+                    "Security implementation"
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
@@ -64,10 +65,146 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 <Link 
-                  to="/web-development" 
+                  to="/contact" // Changed from /web-development
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
                 >
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Domain Registration */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div className="bg-blue-600 h-2"></div>
+              <div className="p-8">
+                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  <Server className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Domain Registration</h3>
+                <p className="text-gray-600 mb-6">
+                  Secure your online presence with our domain registration and management services.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Domain name registration",
+                    "DNS management",
+                    "Domain transfer services",
+                    "Domain privacy protection",
+                    "24/7 support"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                      <span className="ml-3 text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to="/contact" // Changed from /domain-registration
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                >
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* SEO & Marketing */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div className="bg-blue-600 h-2"></div>
+              <div className="p-8">
+                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  <Layout className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">SEO & Marketing</h3>
+                <p className="text-gray-600 mb-6">
+                  Boost your online visibility with our comprehensive SEO and digital marketing solutions.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Search engine optimization",
+                    "Content optimization",
+                    "Keyword research",
+                    "Performance tracking",
+                    "Marketing analytics"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                      <span className="ml-3 text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to="/contact" // Changed from /seo-services
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                >
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Bulk SMS Services */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div className="bg-blue-600 h-2"></div>
+              <div className="p-8">
+                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  <Smartphone className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Bulk SMS Services</h3>
+                <p className="text-gray-600 mb-6">
+                  Reach your audience instantly with our reliable and scalable bulk SMS messaging solutions.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Mass SMS campaigns",
+                    "Automated messaging",
+                    "SMS marketing",
+                    "Delivery reports",
+                    "API integration"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                      <span className="ml-3 text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to="/contact" // Changed from /bulk-sms
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                >
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Content Management System */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <div className="bg-blue-600 h-2"></div>
+              <div className="p-8">
+                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
+                  <Layout className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Content Management</h3>
+                <p className="text-gray-600 mb-6">
+                  Powerful CMS solutions that make content creation and management effortless.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Custom CMS development",
+                    "User-friendly interface",
+                    "Content workflow automation",
+                    "Multi-user management",
+                    "SEO-friendly structure"
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                      <span className="ml-3 text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to="/contact" // Changed from /cms-solutions
+                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+                >
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -81,15 +218,15 @@ const ServicesPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Mobile App Development</h3>
                 <p className="text-gray-600 mb-6">
-                  We build native and cross-platform mobile applications that provide exceptional user experiences across all devices.
+                  Custom mobile applications with seamless user experience and powerful features.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "iOS app development",
-                    "Android app development",
-                    "Cross-platform solutions",
-                    "UI/UX design for mobile",
-                    "App maintenance and updates"
+                    "iOS & Android Development",
+                    "Cross-platform Solutions",
+                    "Push Notifications",
+                    "Offline Functionality",
+                    "App Store Deployment"
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
@@ -98,44 +235,10 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </ul>
                 <Link 
-                  to="/mobile-apps" 
+                  to="/contact" // Changed from /mobile-app-development
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
                 >
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Church Management Software */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-              <div className="bg-blue-600 h-2"></div>
-              <div className="p-8">
-                <div className="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
-                  <Database className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Church Management Software</h3>
-                <p className="text-gray-600 mb-6">
-                  Our specialized software helps churches streamline operations, manage members, and foster community engagement.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Member management",
-                    "Event scheduling",
-                    "Donation tracking",
-                    "Communication tools",
-                    "Volunteer coordination"
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
-                      <span className="ml-3 text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link 
-                  to="/church-software" 
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
-                >
-                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
             </div>
