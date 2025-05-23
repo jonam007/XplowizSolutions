@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <img 
-                src="src/assets/images/Xplowiz_Logo.webp" 
+                src="assets/Xplowiz_Logo.webp" 
                 alt="XplowizSolutions Logo" 
                 className="h-16 w-32 rounded-lg border-0  p-1" 
               />

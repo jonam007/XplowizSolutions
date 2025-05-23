@@ -36,8 +36,8 @@ const ChurchSoftwarePage: React.FC = () => {
               EaziParish Management System
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              A trusted system to manage your parish community, track participation, and streamline operations. 
-              Experience the power of comprehensive church management software.
+            A trusted system to manage your parish community, track participation, and support efficient operations. 
+            Experience the benefits of comprehensive church management software.
             </p>
             <Link
               to="/contact"
@@ -119,11 +119,16 @@ const ChurchSoftwarePage: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                {
-                  icon: <Wallet className="w-8 h-8 text-blue-600" />,
-                  title: "Subscription Management",
-                  description: "Family and member-wise subscription tracking with multiple plans"
-                }
+                                {
+                                  icon: <Wallet className="w-8 h-8 text-blue-600" />,
+                                  title: "Subscription Management",
+                                  description: "Family and member-wise subscription tracking with support for multiple plans."
+                                },
+                                {
+                                  icon: <Wallet className="w-8 h-8 text-green-600" />, // You can change the icon if you have a donation-specific one
+                                  title: "Donation Management",
+                                  description: "Easily manage and track donations, generate receipts, and provide transparent reporting for your parish community."
+                                }
               ].map((feature, index) => (
                 <div
                   key={index}
@@ -212,7 +217,7 @@ const ChurchSoftwarePage: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
             What Church Leaders Say
@@ -255,7 +260,7 @@ const ChurchSoftwarePage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Comparison Table */}
       <section className="py-16 bg-white">

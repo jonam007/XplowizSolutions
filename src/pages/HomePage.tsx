@@ -154,7 +154,7 @@ const HomePage: React.FC = () => {
                   className="w-full h-auto rounded-xl"
                 />
                 <div className="absolute bottom-10 left-0 transform -translate-x-1/3 bg-blue-600 text-white py-6 px-8 rounded-lg shadow-xl">
-                  <div className="text-4xl font-bold">30+</div>
+                  <div className="text-4xl font-bold">200+</div>
                   <div className="text-blue-100">Projects Completed</div>
                 </div>
               </div>

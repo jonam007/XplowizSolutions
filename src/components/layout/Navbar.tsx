@@ -52,10 +52,11 @@ const Navbar: React.FC = () => {
       <nav className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex items-center justify-center">
-            <img 
-              src="src/assets/images/Xplowiz_Logo.png" 
+          <img 
+              src="/assets/Xplowiz_Logo.webp" 
               alt="XplowizSolutions Logo" 
-              className="h-16 w-36 transform transition-transform duration-300 hover:scale-110"
+             
+              className="h-16 w-36 transform transition-transform duration-300 hover:scale-110 rounded-md"
             />
           </div>
           <span 

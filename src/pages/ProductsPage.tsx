@@ -35,9 +35,9 @@ const ProductsPage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
               {[
            
-                { number: "98%", label: "Customer Satisfaction" },
+                { number: "100%", label: "Customer Satisfaction" },
                 { number: "24/7", label: "Support Available" },
-                { number: "20+", label: "Clients Served" }
+                { number: "200+", label: "Clients Served" }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
@@ -64,7 +64,7 @@ const ProductsPage: React.FC = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
               <div className="relative">
                 <img 
-                  src="src/assets/images/tech/mobileapp.png" 
+                  src="/assets/tech/mobileapp.png" 
                   alt="Mobile App Development"
                   className="w-full h-64 object-cover"
                 />
@@ -107,7 +107,7 @@ const ProductsPage: React.FC = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
               <div className="relative">
                 <img 
-                  src="src/assets/images/tech/church-management.jpeg" 
+                  src="/assets/tech/church-management.jpeg" 
                   alt="Church Management Software"
                   className="w-full h-64 object-cover"
                 />
