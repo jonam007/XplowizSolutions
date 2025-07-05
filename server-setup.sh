@@ -45,9 +45,7 @@ docker-compose --version
 echo "Configuring Nginx for Xplowiz Solutions..."
 
 # Move certificate files
-mkdir -p /etc/nginx/ssl/xplowiz.in
-
-
+sudo mkdir -p /etc/nginx/ssl/xplowiz.in
 sudo cp /home/azureuser/XplowizSolutions/nginx.conf /etc/nginx/sites-available/xplowiz.in
 sudo ln -sf /etc/nginx/sites-available/xplowiz.in /etc/nginx/sites-enabled/xplowiz.in
 sudo nginx -t
