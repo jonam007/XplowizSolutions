@@ -1,29 +1,95 @@
-name: CI
+name: Build and Push Docker Images to ACR
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
-  build:
-    runs-on: self-hosted
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write    
+
+    env:
+      REGISTRY: ghcr.io
+      GHCR_USERNAME: jonam007
+      FRONTEND_IMAGE: web
+      TAG: ${{ github.sha }}
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Updated to latest version
-        
-      - name: Set up Node.js
-        uses: actions/setup-node@v4  # Updated to latest version
-        with:
-          node-version: '22.14.0'
-          cache: 'npm'  # Added caching for faster installs
-          
-      - name: Install dependencies
-        run: npm ci  # Changed to 'ci' for more reliable installs
-        
+        uses: actions/checkout@v3
 
-      - name: Build
-        run: npm run build
+      - name: Export TAG env variable
+        run: |
+          echo "TAG=${{ github.sha }}" > .env
+          echo "GHCR_USERNAME=jonam007" >> .env
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to Azure Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITOKEN }}
+
+      - name: Build images using Docker Compose
+        run: |
+          TAG=${{ env.TAG }}  GHCR_USERNAME=${{ env.GHCR_USERNAME }} docker compose -f docker-compose.build.yaml build
+      - name: Push images to Git Container Registry
+        run: |
+          docker push ${{ env.REGISTRY }}/${GHCR_USERNAME}/${{ env.FRONTEND_IMAGE }}:${{ env.TAG }}
+
+      - name: Copy server-setup.sh to VM
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SECRET }}
+          script: rm -f ~/XplowizSolutions/server-setup.sh
+          source: ./server-setup.sh
+          target: ~/XplowizSolutions/
+          overwrite: true
+      
+      - name: Upload nginx configuration file
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SECRET }}
+          script: rm -f ~/XplowizSolutions/Client
+          source: Client/nginx.conf
+          target: ~/XplowizSolutions/
+          overwrite: true
+        
+      - name: Upload .env file to VM
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SECRET }}
+          source: .env
+          target: ~/XplowizSolutions/
+      
+      - name: Deploy on Azure VM via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
+          key: ${{ secrets.AZURE_VM_SECRET }}
+          script: |
+            #uncomment the following lines if you want to run the setup script directly
+            cd ~/Aathavan-Pyro-World
+            chmod +x server-setup.sh
+            ./server-setup.sh
+            echo "${{ secrets.GITOKEN }}" | sudo docker login ghcr.io -u ${{ env.GHCR_USERNAME }} --password-stdin
+            sudo docker rmi -f $(sudo docker images -q) || true
+            export TAG=${{ env.TAG }}
+            sudo docker-compose -f docker-compose.deploy.yaml down
+            sudo docker-compose -f docker-compose.deploy.yaml pull
+            sudo docker-compose -f docker-compose.deploy.yaml 

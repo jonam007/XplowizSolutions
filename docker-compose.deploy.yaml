@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/${GHCR_USERNAME}/web:${TAG}
+    ports:
+      - "8080:80"
+   
+  
