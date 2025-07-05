@@ -63,7 +63,7 @@ jobs:
           username: ${{ secrets.AZURE_VM_USERNAME }}
           key: ${{ secrets.AZURE_VM_SECRET }}
           script: rm -f ~/XplowizSolutions/Client
-          source: Client/nginx.conf
+          source: nginx.conf
           target: ~/XplowizSolutions/
           overwrite: true
         
