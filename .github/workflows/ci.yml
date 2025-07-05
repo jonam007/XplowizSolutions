@@ -101,4 +101,4 @@ jobs:
             export TAG=${{ env.TAG }}
             sudo docker-compose -f docker-compose.deploy.yaml down
             sudo docker-compose -f docker-compose.deploy.yaml pull
-            sudo docker-compose -f docker-compose.deploy.yaml 
+            sudo docker-compose -f docker-compose.deploy.yaml up -d
