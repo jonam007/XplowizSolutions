@@ -48,7 +48,7 @@ echo "Configuring Nginx for Xplowiz Solutions..."
 mkdir -p /etc/nginx/ssl/xplowiz.in
 
 
-sudo cp /home/azureuser/Aathavan-Pyro-World/Client/nginx.conf /etc/nginx/sites-available/xplowiz.in
+sudo cp /home/azureuser/XplowizSolutions/nginx.conf /etc/nginx/sites-available/xplowiz.in
 sudo ln -sf /etc/nginx/sites-available/xplowiz.in /etc/nginx/sites-enabled/xplowiz.in
 sudo nginx -t
 sudo systemctl reload nginx
