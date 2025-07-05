@@ -84,7 +84,7 @@ jobs:
           key: ${{ secrets.AZURE_VM_SECRET }}
           script: |
             #uncomment the following lines if you want to run the setup script directly
-            cd ~/Aathavan-Pyro-World
+            cd ~/XplowizSolutions
             chmod +x server-setup.sh
             ./server-setup.sh
             echo "${{ secrets.GITOKEN }}" | sudo docker login ghcr.io -u ${{ env.GHCR_USERNAME }} --password-stdin
