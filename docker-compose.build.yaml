@@ -2,5 +2,6 @@ version: '3.8'
 services:
   web:
     build: .
+    image: ghcr.io/${GHCR_USERNAME}/web:${TAG}
     ports:
       - "8080:80"
