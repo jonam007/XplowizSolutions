@@ -40,7 +40,7 @@ jobs:
 
       - name: Build images using Docker Compose
         run: |
-          TAG=${{ env.TAG }}  GHCR_USERNAME=${{ env.GHCR_USERNAME }} docker compose -f docker-compose.build.yaml build
+          TAG=${{ env.TAG }}  GHCR_USERNAME=${{ env.GHCR_USERNAME }} docker compose -f docker-compose.build.yaml build --no-cache
       - name: Push images to Git Container Registry
         run: |
           docker push ${{ env.REGISTRY }}/${GHCR_USERNAME}/${{ env.FRONTEND_IMAGE }}:${{ env.TAG }}
