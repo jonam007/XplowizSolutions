@@ -147,11 +147,11 @@ const MobileAppPage: React.FC = () => {
               },
               {
                 title: "Swift",
-                description: "Native iOS development"
+                description: "Native iOS code"
               },
               {
                 title: "Kotlin",
-                description: "Native Android development"
+                description: "Native Android code"
               }
             ].map((tech, index) => (
               <div
