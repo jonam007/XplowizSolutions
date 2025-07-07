@@ -28,7 +28,7 @@ const ProductsPage: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Enterprise-Grade Software Solutions</h1>
             <p className="text-xl text-blue-100 mb-12">
-              Trusted by over 30+ Clients
+              Trusted by over 200+ Clients
             </p>
             
             {/* Statistics */}

@@ -11,7 +11,7 @@ import 'swiper/css/effect-fade';
 
 const slides = [
   {
-    title: "Welcome to XplowizSolution",
+    title: "Welcome to XplowizSolutions",
     subtitle: "Creating Innovative Digital Solutions for a Better Tomorrow",
     image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     cta: "Explore More"
