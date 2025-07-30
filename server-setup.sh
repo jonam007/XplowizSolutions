@@ -55,16 +55,16 @@ sudo systemctl reload nginx
 
 
 # echo "SSl configuration for Nginx..."
-# sudo apt install -y certbot python3-certbot-nginx
-# sudo certbot --nginx --non-interactive --agree-tos -m contact@xplowiz.com -d xplowiz.in -d www.xplowiz.in 
-# sudo certbot --server https://acme.zerossl.com/v2/DV90 \
-#   --eab-kid w7N8mE4I6lq6VNver46bJQ \
-#   --eab-hmac-key ce-aDjiJNZFJbD7X6azNLRL9LUKRbVYcYSoMkqdFVi03NU4nltwR-KhhNDjKvfAzBq-DSv4kFF2H4FzSqKxm0g \
-#   --email contact@xplowiz.com \
-#   --agree-tos \
-#   --nginx \
-#   -d xplowiz.in -d www.xplowiz.in 
-# sudo systemctl reload nginx
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx --non-interactive --agree-tos -m contact@xplowiz.com -d xplowiz.in -d www.xplowiz.in 
+sudo certbot --server https://acme.zerossl.com/v2/DV90 \
+  --eab-kid w7N8mE4I6lq6VNver46bJQ \
+  --eab-hmac-key ce-aDjiJNZFJbD7X6azNLRL9LUKRbVYcYSoMkqdFVi03NU4nltwR-KhhNDjKvfAzBq-DSv4kFF2H4FzSqKxm0g \
+  --email contact@xplowiz.com \
+  --agree-tos \
+  --nginx \
+  -d xplowiz.in -d www.xplowiz.in 
+sudo systemctl reload nginx
 
 
 

@@ -85,7 +85,7 @@ jobs:
           source: docker-compose.deploy.yaml
           target: ~/XplowizSolutions/
       
-      - name: Deploy on Azure VM via SSH
+      - name: Deploy on AWS VM via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.AWS_EC2_HOST }}
