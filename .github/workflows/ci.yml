@@ -48,9 +48,9 @@ jobs:
       - name: Copy server-setup.sh to VM
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.AZURE_VM_HOST }}
-          username: ${{ secrets.AZURE_VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SECRET }}
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USERNAME }}
+          key: ${{ secrets.AWS_EC2_SECRET }}
           script: rm -f ~/XplowizSolutions/server-setup.sh
           source: ./server-setup.sh
           target: ~/XplowizSolutions/
@@ -59,9 +59,9 @@ jobs:
       - name: Upload nginx configuration file
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.AZURE_VM_HOST }}
-          username: ${{ secrets.AZURE_VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SECRET }}
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USERNAME }}
+          key: ${{ secrets.AWS_EC2_SECRET }}
           script: rm -f ~/XplowizSolutions/Client
           source: nginx.conf
           target: ~/XplowizSolutions/
@@ -70,27 +70,27 @@ jobs:
       - name: Upload .env file to VM
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.AZURE_VM_HOST }}
-          username: ${{ secrets.AZURE_VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SECRET }}
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USERNAME }}
+          key: ${{ secrets.AWS_EC2_SECRET }}
           source: .env
           target: ~/XplowizSolutions/
       
       - name: Upload docker-compose.deploy.yaml to VM
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.AZURE_VM_HOST }}
-          username: ${{ secrets.AZURE_VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SECRET }}
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USERNAME }}
+          key: ${{ secrets.AWS_EC2_SECRET }}
           source: docker-compose.deploy.yaml
           target: ~/XplowizSolutions/
       
       - name: Deploy on Azure VM via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.AZURE_VM_HOST }}
-          username: ${{ secrets.AZURE_VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SECRET }}
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USERNAME }}
+          key: ${{ secrets.AWS_EC2_SECRET }}
           script: |
             #uncomment the following lines if you want to run the setup script directly
             cd ~/XplowizSolutions
